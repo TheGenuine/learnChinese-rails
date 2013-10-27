@@ -1,0 +1,30 @@
+<div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to "Learn Chinese",  welcome_index_path, :class => "navbar-brand" =%>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><%= link_to "Home", controller: "welcome" =%></li>
+            <li><%= link_to "Lessons", lessons_index_path =%></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trainers <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Number Trainer", trainer_number_path =%></li>
+                <li><%= link_to "Directions Trainer", trainer_direction_path =%></li>
+                <li><%= link_to "Color Trainer", trainer_color_path =%></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "About", welcome_about_path =%></li>
+			<li><button type="button" class="btn btn-default navbar-btn btn-primary">Sign in</button></li>	
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
