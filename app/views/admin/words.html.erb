@@ -1,0 +1,52 @@
+	<p>
+		<div class="btn btn-primary" id="add_word_button">New Word</div>
+	</p>
+	<p>
+		<div class="row" id="add_word_row" >
+			<%= form_for(Word.new) do |f| %>
+				<div class="col-lg-3">
+					<%= f.label :translation, "Word" %>
+					<%= f.text_field :translation, :placeholder => "Word in english", :class => "form-control" %>
+				</div>
+				<div class="col-lg-3">
+					<%= f.label :pinyn, "Pinyn" %>
+					<%= f.text_field :pinyn, :placeholder => "Pinyn", :class => "form-control" %>
+				</div>
+				<div class="col-lg-2">
+					<%= f.label :character, "Character" %>
+					<%= f.text_field :character, :placeholder => "Chinese character", :class => "form-control" %>
+				</div>	
+<!-- 				<div class="col-lg-3">
+					<%= f.label :types, "Type" %>
+					<%= f.text_field :types, :placeholder => "Type", :class => "form-control" %>
+				</div> -->
+				<div class="col-lg-1">
+		  			<%= f.submit "Save", :disable_with => 'Saveing...', :class => "btn btn-success" %>
+		  		</div>
+			<% end %>
+		</div>
+		</p>
+	<table class="table table-hover">
+		<tr>
+			<th>ID</th>
+			<th>Word</th>
+			<th>Pinyn</th>
+			<th>Character</th>
+			<th>&nbsp;</th>
+			<!-- <th>Types</th> -->
+		</tr>
+	<% @words.each do |word| %>
+		<tr>
+			<td><%= word.id %></td>
+			<td><%= word.translation %></td>
+			<td><%= word.pinyn %></td>
+			<td width="140"><%= word.character %></td>
+			<td><%= link_to raw("<span class='glyphicon glyphicon-pencil'/>"), edit_word_path(word) %> &nbsp; &nbsp; &nbsp;
+			<%= link_to raw("<span class='glyphicon glyphicon-remove'/>"), word_path(word), method: :delete, data: {confirm: "You really want to delete this word?"} %></td>
+			<!-- <td><%= word.types %></td>  -->
+		</tr>
+	<% end %>
+	</table>
+</div>
+
+<script type="text/javascript" src="/assets/admin.js"></script>

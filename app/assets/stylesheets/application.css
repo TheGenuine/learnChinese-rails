@@ -12,3 +12,9 @@
  *= require bootstrap
  *= require_tree .
  */
+
+.container-bg {
+	background-color: #eee;
+	border-radius: 5px;
+	padding-bottom: 20px;
+}

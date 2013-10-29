@@ -1,10 +1,17 @@
 LearnChinese::Application.routes.draw do
+  get "admin/index"
+  get "admin/lessons"
+  get "admin/words"
+  get "admin/concepts"
+  get "admin/word_new"
   get "lessons/index"
+  get "trainer/index"
   get "trainer/number"
   get "trainer/direction"
   get "trainer/color"
   get "welcome/index"
   get "welcome/about"
+  get "welcome/login"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -20,7 +27,10 @@ LearnChinese::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  resources :words
+  resources :lessons do
+    resources :concepts
+  end
   # Example resource route with options:
   #   resources :products do
   #     member do
