@@ -1,0 +1,76 @@
+	<p>
+		<div class="btn btn-primary" id="add_concept_button">+Lesson</div>
+	</p>	
+	<table class="table table-hover">
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Concepts</th>
+			<th>&nbsp;</th>
+			<!-- <th>Types</th> -->
+		</tr>
+	<% @lessons.each do |lesson| %>
+		<tr>
+			<td><%= lessons.id %></td>
+			<td><%= lessons.title %></td>
+			<td><%= lessons.description %></td>
+			<% lessons.concept.each do || %>
+
+			<% end %>
+			<td><%= link_to raw("<span class='glyphicon glyphicon-pencil'/>"), edit_concept_path(concept) %> &nbsp; &nbsp; &nbsp;
+			<%= link_to raw("<span class='glyphicon glyphicon-remove'/>"), concept_path(concept), method: :delete, data: {confirm: "You really want to delete this concept?"} %></td>
+		</tr>
+	<% end %>
+</table>
+
+<!--- Finished Modal Dialog -->
+	<div id="addConceptDialog" tabindex="-1" role="dialog" aria-labelledby="addConceptDialog" aria-hidden="true" class="modal fade">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+	        <center> 
+	          <h4 class="modal-title">Add new Concept</h4>
+	        </center>
+	      </div>
+	      <%= form_for(@lesson) do |f| %>
+	      <div class="modal-body">
+					<%= f.label :title, "Title" %>
+					<%= f.text_field :title, :placeholder => "Lesson title", :class => "form-control" %>
+					<%= f.label :description, "Description" %>
+					<%= f.text_area :description, :placeholder => "Short description of the lesson", :class => "form-control" %>
+					<p>
+						<div class="row">
+							<div class="col-md-5">
+								<%= f.label :concept, "Selected Concepts", :class => "control-label" %><br>
+								<%= f.select( :concept,  {}, {}, {:class => "form-control", :multiple => true}  )%>
+							</div>
+							<div class="col-xs-2" >
+								<br><br>
+								<span class="glyphicon glyphicon-chevron-left" id="button_add_selected_concept"></span>
+								<br><br>
+								<span class="glyphicon glyphicon-chevron-right" id="button_remove_selected_concept"></span>
+							</div>
+							<div class="col-md-5">
+								<%= f.label :allConcepts, "Available Concepts", :class => "control-label" %>
+								<%= select("allConcepts", "concept_id", Concept.all.collect {|c| [ c.sentence, c.id ] }, {}, {:class => "form-control", :multiple => true }) %>
+								<!-- <select name="availableConcepts" id="availableConcepts" class="form-control" multiple size="5"> -->
+								<!-- <label for="availableConcepts" class="control-label">Selected Concepts</label> -->
+									
+								</select>
+							</div>
+						</div>
+					</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" data-dismiss="modal" id="closeButton" class="btn btn-default">Close</button>
+		  	<%= f.submit "Save", :disable_with => 'Saveing...', :class => "btn btn-success" %>
+	        <!-- <button type="button" id="againButton" class="btn btn-primary"></button> -->
+	      </div>
+			<% end %> 
+	    </div>
+	  </div>
+	</div>
+</div>
+<script type="text/javascript" src="/assets/admin.js"></script>
