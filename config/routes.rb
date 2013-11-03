@@ -28,6 +28,7 @@ LearnChinese::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :words
+  resources :concepts
   resources :lessons do
     resources :concepts
   end

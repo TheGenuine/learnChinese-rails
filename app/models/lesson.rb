@@ -1,10 +1,6 @@
 class Lesson < ActiveRecord::Base
-	has_many :lesson
+	has_many :concept
 
 	def new
-		@title = ""
-		@description = ""
-		@lessons = Array.new
-		@tags = Array.new
 	end
 end

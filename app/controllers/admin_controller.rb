@@ -6,6 +6,7 @@ class AdminController < ApplicationController
   def lessons
     @title = "Admin-Lessons"
     @lessons = Lesson.all
+    @lesson = Lesson.new
   end
 
   def words
@@ -15,6 +16,7 @@ class AdminController < ApplicationController
 
   def concepts
     @title = "Admin-Concepts"
+    @concept = Concept.new
   	@concepts = Concept.all
   end
 end

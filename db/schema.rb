@@ -11,23 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028115330) do
-
-  create_table "lessons", force: true do |t|
-    t.string   "concept"
-    t.string   "word"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "words", force: true do |t|
-    t.string   "translation"
-    t.string   "pinyn"
-    t.string   "character"
-    t.integer  "types_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20131031143333) do
 
   create_table "concepts", force: true do |t|
     t.string   "sentence"
@@ -37,8 +21,26 @@ ActiveRecord::Schema.define(version: 20131028115330) do
     t.datetime "updated_at"
   end
 
+  create_table "lessons", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "concept"
+    t.string   "word"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "types", force: true do |t|
     t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "words", force: true do |t|
+    t.string   "translation"
+    t.string   "pinyn"
+    t.string   "character"
+    t.integer  "types_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
