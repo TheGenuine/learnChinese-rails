@@ -25,6 +25,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 
+gem 'rails_12factor', group: :production
+
 #gem 'omniauth'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
