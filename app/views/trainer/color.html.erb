@@ -1,0 +1,65 @@
+	<div class="progress" id="progress">
+	</div>
+	<div class="well well-lg">
+
+		<div class="row">
+			<div class="col-md-12" id="description">
+				<h4>Description</h4>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-6"  align="center">
+				<div class="row" id="question">
+					
+				</div>
+			</div>
+			<div id="user_input_field" class="col-md-6 center-block">
+				<input id="user_input_text" type="text" placeholder="The color on the left in chinese" class="form-control" style="display: none;"/>
+				<div id="color_fields" class="row" style="display: none;">
+					<div class="col-xs-2"><div class="img-rounded color-field" id="0" style="background-color: #000000;"></div></div>
+					<div class="col-xs-2"><div class="img-rounded color-field" id="1" style="background-color: #FFFFFF;"></div></div>
+					<div class="col-xs-2"><div class="img-rounded color-field" id="2" style="background-color: #FF0000;"></div></div>
+					<div class="col-xs-2"><div class="img-rounded color-field" id="3" style="background-color: #008000;"></div></div>
+					<div class="col-xs-2"><div class="img-rounded color-field" id="4" style="background-color: #0000FF;"></div></div>
+					<br>
+					<div class="col-xs-2"><div class="img-rounded color-field" id="5" style="background-color: #FFFF00;"></div></div>
+					<div class="col-xs-2"><div class="img-rounded color-field" id="6" style="background-color: #800080;"></div></div>
+					<div class="col-xs-2"><div class="img-rounded color-field" id="7" style="background-color: #FFC0CB;"></div></div>
+					<div class="col-xs-2"><div class="img-rounded color-field" id="8" style="background-color: #808080;"></div></div>
+					<div class="col-xs-2"><div class="img-rounded color-field" id="9" style="background-color: #8B4513;"></div></div>
+					<div class="col-xs-2"><div class="img-rounded color-field" id="10" style="background-color: #FFA500;"></div></div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row" align="right">
+			<div class="col-md-12">
+				<button id="checkButton" type="submit" class="btn btn-primary">Check</button>
+			</div>
+		</div>
+	</div>
+
+	<!--- Finished Modal Dialog -->
+	<div id="finishedDialog" tabindex="-1" role="dialog" aria-labelledby="finishedDialogLabel" aria-hidden="true" class="modal fade">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+	        <center> 
+	          <h4 class="modal-title">Finished!</h4>
+	        </center>
+	      </div>
+	      <div class="modal-body">
+	        <center> 
+	          <div id="dialog_message"></div>
+	        </center>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" data-dismiss="modal" id="closeButton" class="btn btn-default">Close</button>
+	        <button type="button" id="againButton" class="btn btn-primary">Play again</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+<script type="text/javascript" src="/assets/trainer_color.js"></script>
